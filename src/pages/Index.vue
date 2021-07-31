@@ -14,11 +14,12 @@
     </div>
 
     <q-card class="white" style="width: 500px; ">
-      <div>填寫文字</div>
-      <q-input filled v-model="inputText" label="填寫文字" />
-        <q-btn class="text-h5" dense round flat color="primary" icon="add" @click="download()">
-          下載
-        </q-btn>
+      <div class="q-pa-sm">說明:於下方填寫文字後下載即可輸出圖片！</div>
+      <div class="q-pa-sm">請大家持續支持我國選手!!</div>
+      <q-input filled v-model="inputText" clearable label="填寫文字" />
+      <q-btn class="q-pa-sm text-h6" dense round flat color="primary" icon="download" @click="download()">
+        下載
+      </q-btn>
     </q-card>
   </q-page>
 </template>
@@ -26,7 +27,6 @@
 <script>
 import { defineComponent } from 'vue';
 import * as htmlToImage from 'html-to-image';
-import { saveAs } from 'file-saver';
 
 export default defineComponent({
   name: 'PageIndex',
@@ -70,7 +70,7 @@ export default defineComponent({
 .dot {
   position:relative;
   top: 5px;
-  left:220px;
+  left:180px;
   width:20px;
   height:20px;
   border-radius: 10px;
@@ -79,7 +79,7 @@ export default defineComponent({
   position: relative;
   left: 150px;
   top: -100px;
-  font-size: 24px;
+  font-size: 28px;
   color: white;
 }
 

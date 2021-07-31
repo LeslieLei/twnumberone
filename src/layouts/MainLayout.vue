@@ -4,7 +4,7 @@
       <q-toolbar>
 
         <q-toolbar-title>
-          Taiwan Number One 產生器
+          台灣難波萬 產生器
         </q-toolbar-title>
 
       </q-toolbar>
