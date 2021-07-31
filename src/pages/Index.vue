@@ -14,11 +14,13 @@
     </div>
 
     <q-card class="white" style="width: 500px; ">
-      <div class="q-pa-sm">說明:於下方填寫文字後下載即可輸出圖片！</div>
+      <div class="q-pa-sm">
+        說明:於下方填寫文字後點選'輸出'按鈕 即可輸出圖片！
+      </div>
       <div class="q-pa-sm">請大家持續支持我國選手!!</div>
       <q-input filled v-model="inputText" clearable label="填寫文字" />
       <q-btn class="q-pa-sm text-h6" dense round flat color="primary" icon="download" @click="download()">
-        下載
+        輸出
       </q-btn>
     </q-card>
   </q-page>
@@ -37,21 +39,21 @@ export default defineComponent({
     }
   },
   methods: {
-    // download() {
-    //   htmlToImage.toBlob(document.getElementById('twno1'),{ width: 500, height: 340, quality: 0.95, pixelRatio: 1})
-    //     .then(function (dataUrl) {
-    //       saveAs(dataUrl, 'twno1.png');
-    //     });   
-    // }
     download() {
-      htmlToImage.toJpeg(document.getElementById('twno1'),{ width: 500, height: 340, quality: 0.95, pixelRatio: 1})
+      htmlToImage.toBlob(document.getElementById('twno1'),{ width: 500, height: 340, quality: 0.95, pixelRatio: 1})
         .then(function (dataUrl) {
-          const link = document.createElement('a');
-          link.download = 'twno1.jpeg';
-          link.href = dataUrl;
-          link.click();
+          saveAs(dataUrl, 'twno1.png');
         });   
-    }    
+    }
+    // download() {
+    //   htmlToImage.toJpeg(document.getElementById('twno1'),{ width: 500, height: 340, quality: 0.95, pixelRatio: 1})
+    //     .then(function (dataUrl) {
+    //       const link = document.createElement('a');
+    //       link.download = 'twno1.jpeg';
+    //       link.href = dataUrl;
+    //       link.click();
+    //     });   
+    // }    
   }
 })
 </script>
