@@ -37,21 +37,21 @@ export default defineComponent({
     }
   },
   methods: {
-    download() {
-      htmlToImage.toBlob(document.getElementById('twno1'),{ width: 500, height: 340, quality: 0.95, pixelRatio: 1})
-        .then(function (dataUrl) {
-          saveAs(dataUrl, 'twno1.png');
-        });   
-    }
-// download() {
-    //   htmlToImage.toJpeg(document.getElementById('twno1'),{ width: 500, height: 340, quality: 0.95, pixelRatio: 1})
+    // download() {
+    //   htmlToImage.toBlob(document.getElementById('twno1'),{ width: 500, height: 340, quality: 0.95, pixelRatio: 1})
     //     .then(function (dataUrl) {
-    //       const link = document.createElement('a');
-    //       link.download = 'my-image-name.jpeg';
-    //       link.href = dataUrl;
-    //       link.click();
+    //       saveAs(dataUrl, 'twno1.png');
     //     });   
-    // }    
+    // }
+    download() {
+      htmlToImage.toJpeg(document.getElementById('twno1'),{ width: 500, height: 340, quality: 0.95, pixelRatio: 1})
+        .then(function (dataUrl) {
+          const link = document.createElement('a');
+          link.download = 'twno1.jpeg';
+          link.href = dataUrl;
+          link.click();
+        });   
+    }    
   }
 })
 </script>
